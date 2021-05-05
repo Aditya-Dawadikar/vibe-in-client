@@ -1,0 +1,43 @@
+.sideBar{
+    height: 100vh;
+    position: fixed;
+    left:0px;
+    top:0px;
+    width: 300px;
+    background-color: #19201A;
+    z-index: 200;
+}
+
+.logo-sm{
+    width: 60px;
+    height: 69x;
+    position: relative;
+    left:50px;
+    top:20px;
+    box-shadow: rgb(65, 210, 14) 0px 0px 20px;
+    border-radius: 50%;
+}
+
+.ul-options{
+    width: 100%;
+    position: relative;
+    list-style: none;
+    color:white;
+    top:100px;
+    left:0px;
+    padding-left: 0;
+}
+
+.li-option{
+    font-size: 20px;
+    height: 50px;
+    padding:12px 5px 5px 30px;
+    width: 100%;
+    position: relative;
+    left:0px;
+    cursor: pointer;
+}
+
+.li-option:hover{
+    background-color: #29342B;
+}
