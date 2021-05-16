@@ -1,0 +1,678 @@
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #19201A; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #41D20E; 
+  }
+
+  /*occupy*/
+  .occupy{
+      margin: 0;
+      padding: 0;
+  }
+
+  /*margin-top-bottom-10*/
+  .margin-top-bottom-30{
+      margin-top: 30px;
+      margin-bottom: 10px;
+  }
+
+/*----------------------------Sidebar----------------------------*/
+.sideBar{
+    height: 100%;
+    width:100%;
+    align-items: center;
+    background-color: #19201A;
+    z-index: 1000;
+    box-shadow: rgb(0, 0, 0) 0px 0px 10px;
+}
+
+.logo-sm{
+    width: 60px;
+    height: 69x;
+    position: relative;
+    left: 20px;
+    top:50px;
+    margin: auto;
+    box-shadow: rgb(65, 210, 14) 0px 0px 20px;
+    border-radius: 50%;
+}
+
+.brand-name{
+    color:  rgb(65, 210, 14);
+    font-size:30px;
+    font-weight: bold;
+    position: relative;
+    left:100px;
+}
+
+.ul-options{
+    width: 100%;
+    position: relative;
+    list-style: none;
+    color:white;
+    top:100px;
+    left:0px;
+    padding-left: 0;
+}
+
+.li-option{
+    font-size: 20px;
+    height: 50px;
+    padding:12px 5px 5px 30px;
+    width: 100%;
+    position: relative;
+    left:0px;
+    cursor: pointer;
+}
+
+.li-option:hover{
+    background-color: #000801;
+    box-shadow: rgb(65, 210, 14) 0px 0px 5px;
+}
+
+.logo-container{
+    cursor: pointer;
+}
+
+.anchor{
+    text-decoration: none;
+    color: white;
+}
+
+.anchor:focus{
+    text-decoration: none;
+    color: white;
+}
+
+.anchor:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.anchor:active{
+    text-decoration: none;
+    color: white;
+}
+
+.anchor:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.search-container-sidebar{
+    position: relative;
+    top:100px;
+    width: calc(100% - 20px);
+    border-radius: 20px;
+    box-shadow: rgb(65, 210, 14) 0px 0px 15px;
+    margin:10px 10px 30px 10px;
+}
+
+.sidebar-search-bar{
+    width: calc(100% - 40px);
+    height: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 3px 10px 3px 10px;
+    font-size: 16px;
+}
+
+.search-btn{
+    width: 40px;
+    height: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 3px;
+    font-size: 16px;
+    box-shadow: #000 0px 0px 5px;
+}
+
+.search-btn:hover{
+    background: #41D20E;
+}
+
+/*----------------------------Main----------------------------*/
+.main{
+    width:100%;
+    height: calc(100vh - 100px);
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+    z-index: 800;
+    background-color: #212a23;
+    color: white;
+}
+
+.view-hero{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(50, 144, 144);
+    box-shadow: #000 0px 0px 10px inset;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.track-list-header{
+    display: flex;
+    position: relative;
+}
+
+.row-header{
+    position: relative;
+    left:7px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.link{
+    position: relative;
+    font-size: 20px;
+    top:15px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.row{
+    list-style: none;
+    display: flex;
+    padding-left:15px;
+    width: 100%;
+}
+
+.space-maker{
+    width: 100%;
+    height: 150px;
+}
+.banner{
+    margin-top: 10px;
+}
+
+/*----------------------------ViewAlbum----------------------------*/
+.album-hero{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    background-color: rgb(50, 144, 144);
+    position: relative;
+    box-shadow: #000 0px 0px 20px inset;
+}
+
+.album-bg{
+    height: 100vh;
+    width: calc(100% + 3px);
+    overflow-y: scroll;
+}
+
+.album-view-info{
+    color: white;
+    position: absolute;
+    bottom: 50px;
+}
+
+.album-view-title{
+    font-size: 70px;
+    height: auto;
+    font-weight: bold;
+    position: relative;
+    left:50px;
+}
+
+.album-view-credits{
+    font-size: 20px;
+    height: auto;
+    position: relative;
+    left:50px;
+    top:-15px;
+}
+
+.album-view-meta{
+    font-size:14px;
+    height: auto;
+    position: relative;
+    left:50px;
+    top:-15px;
+    font-weight: bold;
+    display: flex;
+    width: 100%;
+}
+
+.attribute{
+    padding-right: 10px;
+    display: flex;
+}
+
+.dot{
+    width: 7px;
+    height: 7px;
+    background-color: rgb(253, 253, 253);
+    border-radius: 50%;
+    margin-top: 7px;
+    margin-left:10px
+}
+
+.options{
+    font-size:14px;
+    height: auto;
+    position: relative;
+    left:50px;
+    top:-15px;
+    display: flex;
+    width: 100%;
+}
+
+.album-view-like-btn{
+    cursor: pointer;
+}
+
+.track-container{
+    width: 100%;
+    height: 150px;
+}
+
+.track-list{
+    width: 100%;
+    list-style: none;
+    margin: 0px;
+    position: relative;
+    top:-20px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 10px;
+}
+/*----------------------------Banner----------------------------*/
+.banner{
+    margin-top: 30px;
+}
+
+.banner-in{
+    margin: 0px 15px 0px 15px;
+}
+
+.track-list-header{
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.row-header{
+    position: relative;
+    left:7px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.link{
+    position: relative;
+    font-size: 20px;
+    top:5px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.banner-track-list{
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    width: inherit;
+    overflow-wrap: break-word;
+}
+
+.banner-item{
+    display: inline;
+}
+
+/*----------------------------Forms----------------------------*/
+.form-container-inner{
+    margin:10px;
+    color: white;
+}
+
+.flex-input{
+    display: flex;
+}
+
+.tag-container{
+    width: 100%;
+    min-height: 5px;
+}
+
+.show{
+    display: flex;
+}
+
+.tag-list{
+    width: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-wrap: break-word;
+}
+
+.tag{
+    display: inline;
+    margin: 2px;
+}
+
+.track-list{
+    list-style:none;
+    color:black;
+    position:relative;
+    justify-items: center;
+    align-items: center;
+    padding-left: 0px;
+    background-color: white;
+}
+
+.track-name{
+    height: 30px;
+    margin-top: 3px;
+    padding-left: 10px;
+    margin-left: 0px;
+    color: black;
+    cursor: pointer;
+    padding-top: 3px;
+}
+
+.track-name:hover{
+    background-color: 	#127ad5;
+}
+
+/*----------------------------Album Card----------------------------*/
+.album-card-container{
+    width: 300px;
+    height: 100px;
+    /* background-color: #19201A; */
+    background-color: #000801;
+    margin-left: 5px;
+    display: flex;
+    cursor: pointer;
+    color:white;
+    margin-top: 5px;
+}
+
+.album-card-container:hover{
+    /* background-color: #000801; */
+    box-shadow: rgb(65, 210, 14) 0px 0px 5px;
+}
+
+.album-avatar{
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    margin: 10px;
+}
+
+.album-info{
+    width: 200px;
+    height: 90px;
+    margin: 5px;
+    position: relative;
+}
+
+.album-title{
+    font-size: 24px;
+    height: 30px;
+    overflow-y: hidden;
+    margin-top: 10px;
+}
+
+.album-credits{
+    font-size: 16px;
+    overflow-x: hidden;
+    height: 20px;
+    overflow-y: hidden;
+    margin-top: 5px;
+}
+
+.album-options{
+    display: flex;
+    height: 30px;
+}
+
+.album-play-btn{
+    position: absolute;
+    right: 0px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+.album-play-btn:hover{
+    transform: scale(1.1);
+}
+.album-like-icon{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin-top: 2px;
+}
+
+.anchor{
+    text-decoration: none;
+}
+.anchor:hover{
+    text-decoration: none;
+}
+.anchor:active{
+    text-decoration: none;
+}
+.anchor:visited{
+    text-decoration: none;
+}
+/*----------------------------Track Card----------------------------*/
+.track-card{
+    width: 170px;
+    height: 245px;
+    /* background-color: #19201A; */
+    background-color: #000801;
+    margin: 3px 0px 3px 7px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.track-card:hover{
+    /* background-color: #000801; */
+    box-shadow: rgb(65, 210, 14) 0px 0px 5px;
+}
+
+.track-hero{
+    width: 150px;
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    position: relative;
+    left:10px;
+    top:10px;
+}
+
+.track-title{
+    width: 160px;
+    height:40px ;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.track-meta{
+    width: 160px;
+    height: 18px;
+    overflow-y: hidden;
+    color: white;
+    font-size: 12px;
+    position: relative;
+    left:10px;
+    top:0px;
+    overflow-x: hidden;
+}
+
+.track-play-btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    bottom:5px;
+    left: 135px;
+    border: none;
+    outline: none;
+}
+
+.track-play-btn:hover{
+    transform: scale(1.1);
+}
+
+.track-heart{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.track-heart:hover{
+    cursor: pointer;
+}
+/*----------------------------Track Card Long----------------------------*/
+.track-long{
+    width: 100%;
+    height: 70px;
+    background-color: #212a23;
+    display: flex;
+    position: relative;
+    color: white;
+}
+
+.track-long:hover{
+    z-index: 2;
+    cursor: pointer;
+    /* background-color: #19201A; */
+    background-color: #000801;
+    box-shadow: rgb(65, 210, 14) 0px 0px 5px;
+}
+
+.track-long-avatar{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    margin:10px;
+}
+
+.track-long-title{
+    font-size: 20px;
+    padding: 20px;
+}
+
+.track-long-credits{
+    font-size: 15px;
+    padding: 25px;
+}
+
+.like-long-icon{
+    position: relative;
+    top:20px;
+    cursor: pointer;
+}
+/*----------------------------Login/Signup----------------------------*/
+.login-form{
+    width:500px;
+    height:500px;
+    position: relative;
+    left:100px;
+    top:50px;
+}
+/*----------------------------Login/Signup----------------------------*/
+.login-left-bg{
+    position: relative;
+    width: 40vw;
+    height: 100vh;
+    background-color: #19201A;
+}
+
+.login-container-fg{
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    top:calc(50% - 250px);
+    left:calc(50% - 500px);
+    box-shadow: rgb(65, 210, 14) 0px 0px 20px;
+    display: flex;
+}
+
+.login-left-fg-box{
+    width: 350px;
+    opacity: 0;
+    height: 100%;
+}
+
+.login-left-fg{
+    width: 350px;
+    height: 100%;
+}
+
+.login-brand-container{
+    position: relative;
+    top:calc(-70%);
+    left:calc(50% - 175px);
+}
+
+.login-logo{
+    position: relative;
+    left:calc(50% - 60px);
+    top:calc(50% - 100px);
+    border-radius: 50%;
+    box-shadow: rgb(65, 210, 14) 0px 0px 20px;
+}
+
+.login-brand-name{
+    color:  rgb(65, 210, 14);
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+    left:calc(50% - 80px);
+}
+
+.login-tabs{
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    font-size: 35px;
+}
+
+.login-tab{
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-tab:hover{
+    background-color: rgb(219, 236, 218);
+    cursor: pointer;
+}
+
+.login-active{
+    background-color: rgb(219, 236, 218);
+}
+
+/*----------------------------Login/Signup----------------------------*/
+/*----------------------------Login/Signup----------------------------*/
+/*----------------------------Login/Signup----------------------------*/

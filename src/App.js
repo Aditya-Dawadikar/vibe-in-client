@@ -1,20 +1,51 @@
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter, Switch, Route ,withRouter} from 'react-router-dom'
 
-import Login from './views/Login/Login';
-import UserDashboard from './views/UserDashBoard/UserDashBoard';
-import ContentCreatorDashboard from './views/ContentCreatorDashBoard/ContentCreatorDashBoard';
+import Login from './screens/Login/Login';
+
+import UserHome from './screens/User/UserHome'
+import UserViewAlbum from './screens/User/UserViewAlbum'
+import UserSavedSongs from './screens/User/UserSavedTracks'
+import UserPlayLists from './screens/User/UserPlayLists'
+import UserAllTracks from './screens/User/UserAllTracks'
+import UserAllAlbums from './screens/User/UserAllAlbums'
+
+import ContentCreatorHome from './screens/ContentCreator/ContentCreatorHome'
+import ContentCreatorTracks from './screens/ContentCreator/ContentCreatorTracks'
+import ContentCreatorAlbums from './screens/ContentCreator/ContentCreatorAlbums'
+import ContentCreatorViewAlbum from './screens/ContentCreator/ContentCreatorViewAlbum'
+import ContentCreatorCreateAlbum from './screens/ContentCreator/ContentCreatorCreateAlbum'
+import ContentCreatorUploadTrack from './screens/ContentCreator/ContentCreatorUploadTrack'
+import ContentCreatorAllTracks from './screens/ContentCreator/ContentCreatorAllTracks'
+import ContentCreatorAllAlbums from './screens/ContentCreator/ContentCreatorAllAlbums'
 
 function App() {
   return (
     <div>
-      <Router>
-          <Switch>
-              <Route exact path='/' component={Login} />
-              <Route path='/user' component={UserDashboard} />
-              <Route path='/contentcreator' component={ContentCreatorDashboard} />
-          </Switch>
-      </Router>
+      
+      <BrowserRouter>
+            <Switch>
+                <Route exact path='/' component={Login} />
+                
+                {/* User routes*/}
+                <Route  path='/user/home' component={UserHome} />
+                <Route  path='/user/savedsongs' component={UserSavedSongs} />
+                <Route path='/user/playlists' component={UserPlayLists} />
+                <Route path='/user/viewalbum' component={UserViewAlbum} />
+                <Route path='/user/alltracks' component={UserAllTracks} />
+                <Route path='/user/allalbums' component={UserAllAlbums} />
+                
+                {/* Content creator routes*/}
+                <Route path='/contentcreator/home' component={ContentCreatorHome} />
+                <Route path='/contentcreator/mytracks' component={ContentCreatorTracks} />
+                <Route path='/contentcreator/myalbums' component={ContentCreatorAlbums} />
+                <Route path='/contentcreator/viewalbum' component={ContentCreatorViewAlbum}/>
+                <Route path='/contentcreator/createalbum' component={ContentCreatorCreateAlbum}/>
+                <Route path='/contentcreator/uploadtrack' component={ContentCreatorUploadTrack}/>
+                <Route path='/contentcreator/alltracks' component={ContentCreatorAllTracks} />
+                <Route path='/contentcreator/allalbums' component={ContentCreatorAllAlbums} />
+            </Switch>
+        </BrowserRouter>
     </div>
   );
 }
