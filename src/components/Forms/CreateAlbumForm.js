@@ -1,11 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import {Form,Button} from 'react-bootstrap'
-// import './Forms.css'
 import '../Style.css'
 
 import Chip from '@material-ui/core/Chip'
-
-import {useSelector} from 'react-redux'
 
 const CreateAlbumForm = () => {
     //toggleing views for dropdown,tag,credit and track list
@@ -37,14 +34,6 @@ const CreateAlbumForm = () => {
     const handleName=(e)=>{nameInputSetter(e.target.value)}
     const handleTrack=(e)=>{trackSelectedSetter(e.target.value)}
 
-    //load track for selection
-    let trackLoader=useSelector(state=>state.myTracks.tracks)
-    const initializer=()=>{
-        trackSetter(trackLoader);
-    }
-    useEffect(()=>{
-        initializer()
-    },[trackLoader])
 
     //toggle dropdow
     const dropDownHandler=(e)=>{

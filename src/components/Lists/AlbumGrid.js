@@ -8,7 +8,7 @@ const AlbumGrid = (props) => {
         <Grid container item xs={12}>
             {
                 props.banner.albums.map((album,index)=>{
-                    return <AlbumCard album={album}/>
+                    return <AlbumCard mode={props.mode}  mode={props.mode} album={album}/>
                 })
             }        
         </Grid>

@@ -46,7 +46,7 @@ const MyAlbums = () => {
     return (
         <div className="main">
             <div className="view-hero"></div>
-            <AlbumGrid banner={banner}/>
+            <AlbumGrid mode={"edit"} banner={banner}/>
         </div>
     )
 }

@@ -8,7 +8,8 @@ const Home = (props) => {
     return (
         <div className="main">
             <div className="view-hero"></div>
-            <AlbumBanner/>
+            <AlbumBanner />
+            <TrackBanner/>
             <TrackBanner/>
         </div>
     )

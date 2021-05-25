@@ -1,5 +1,6 @@
 import React,{useState,useEffect,useRef} from 'react'
-import './Player.css'
+// import './Player.css'
+import '../Style.css'
 
 import PlayBlack from '../../assets/player/play-black.png';
 import PauseBlack from '../../assets/player/pause-black.png';
@@ -8,8 +9,8 @@ import ShuffleGreen from '../../assets/player/shuffle-green.png';
 import Loop from '../../assets/player/loop.png';
 import LoopGreen from '../../assets/player/loop-green.png';
 import LoopSingleGreen from '../../assets/player/loop-single-green.png';
-import Previous from '../../assets/player/previous.png';
-import Next from '../../assets/player/next.png';
+import Previous from '../../assets/player/backward-white.png';
+import Next from '../../assets/player/forward-white.png';
 
 import {useSelector} from 'react-redux'
 
@@ -23,8 +24,12 @@ const Player = (props) => {
     }
     const [controls,setControls]= useState(controlObject)
 
-    const [audio,setAudio] = useState(new Audio("http://localhost:3030/stream/1"));
-    const trackMeta = useSelector((state)=>state.player.details);
+    const [audio,setAudio] = useState(new Audio());
+
+    const track= useSelector((state)=>state.player);
+    useEffect(()=>{
+        //setAudio(new Audio(track.url));
+    },[])
 
     useEffect(()=>{
         audio.addEventListener('ended',()=>{})
@@ -37,8 +42,8 @@ const Player = (props) => {
 
     const playButtonClicked=()=>{
         audio.play()
-        showStartTime()
-        setSliderPositionByProgress()
+        //showStartTime()
+        //setSliderPositionByProgress()
         let controlObject={  
             play:true,
             shuffle:controls.shuffle,
@@ -57,31 +62,6 @@ const Player = (props) => {
             loopSingle:controls.loopSingle
         }
         setControls(controlObject)
-    }
-
-    function setCurrentTimeByDrag(){
-        //set audio.currentTime
-        audio.currentTime = parseInt((audio.duration * slider)/100)
-    }
-
-    function setSliderPositionByProgress(){
-        setInterval(()=>{
-            setSlider((audio.currentTime*100)/audio.duration);
-        },1000)
-    }
-
-    //progress bar
-    const [slider,setSlider] = useState(0);
-    const  progress = useRef();
-    const [startTime,setStartTime]=useState("0:00");
-    const handler = ()=>{
-        // if(controls.play!=true){
-        //     playButtonClicked()
-        // }
-        // setSlider(progress.current.value)
-        // // setSliderPositionByProgress()
-        // setCurrentTimeByDrag()
-        // playButtonClicked()
     }
 
     //toggles
@@ -113,32 +93,34 @@ const Player = (props) => {
         setControls(controlObject)
     }
 
-    function formatTime(timeString){
-        let currentTime = timeString;
-        let minutes = parseInt(currentTime/60);
-        let seconds = parseInt(currentTime%60);
-        if(seconds<10){
-            seconds="0"+seconds
-        }
-        return minutes+":"+seconds
-    }
-
-    const showStartTime=()=>{
-        setInterval(()=>{
-            setStartTime(formatTime(audio.currentTime));
-        },1000)
-    }
-
     return (
-        <div className={props.show?"player-container":"hide"}>
-            <div className="track-avatar"></div>
-            <div className="track-info">
-                <div className="track-title">{trackMeta.title}</div>
-                <div className="tract-meta">{trackMeta.meta}</div>
+        <div className="player-container">
+            <div className="left">
+                <div className="player-cover"></div>
+                <div className="player-info">
+                    <div className="player-title">Liar</div>
+                    <div className="player-credits">Camila Cabelo</div>
+                </div>
             </div>
-            <div className="track-controls"> 
-                <div className="controls">
-                    <button className={controls.shuffle?"hide":"controls-secondary"} onClick={toggleShuffleButton}><img className="icon-ternary shuffle" src={Shuffle} alt=""/></button>
+            <div className="right">
+                <div className="player-controls">
+                    <img className="player-control-icon next-prev" src={Previous} alt="#" />
+                    <img className={controls.play?"hide":"player-control-icon play-pause"} src={PlayBlack} onClick={()=>{playButtonClicked()}} alt="#" />
+                    <img className={controls.play?"player-control-icon play-pause":"hide"} src={PauseBlack} onClick={()=>{pauseButtonClicked()}} alt="#" />
+                    <img className="player-control-icon next-prev" src={Next} alt="#" />
+                </div>
+                <div className="player-progress">
+                    <div className="player-time">0:00</div>
+                    <input className="player-progress-input" type="range"/>
+                    <div className="player-time">0:00</div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+/**
+ *                  <button className={controls.shuffle?"hide":"controls-secondary"} onClick={toggleShuffleButton}><img className="icon-ternary shuffle" src={Shuffle} alt=""/></button>
                     <button className={controls.shuffle?"controls-secondary":"hide"} onClick={toggleShuffleButton}><img className="icon-ternary shuffle" src={ShuffleGreen} alt=""/></button>
                     <button className="controls-primary blink"><img className="icon-secondary" src={Previous} alt=""/></button>
                     <button className={controls.play===false?"controls-primary mid active-function":"hide"} onClick={playButtonClicked}><img className="icon-primary" src={PlayBlack} alt=""/></button>
@@ -147,17 +129,6 @@ const Player = (props) => {
                     <button className={controls.loop===false && controls.loopSingle===false ?"controls-secondary":"hide"} onClick={toggleLoopButton}><img className="icon-ternary loop" src={Loop} alt=""/></button>
                     <button className={controls.loop===true && controls.loopSingle===false ?"controls-secondary":"hide"} onClick={toggleLoopButton}><img className="icon-ternary loop" src={LoopGreen} alt=""/></button>
                     <button className={controls.loop===true && controls.loopSingle===true ?"controls-secondary":"hide"} onClick={toggleLoopButton}><img className="icon-ternary loop" src={LoopSingleGreen} alt=""/></button>
-                </div>
-                <div className="track-progress">
-                    <div className="track-container">
-                        <div className="track-time">{startTime}</div>
-                            <input type="range" min="0" max="100" ref={progress} onChange={handler} value={slider} className="slider"/>
-                        <div className="track-time">{formatTime(audio.duration)}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+ */
 
 export default Player

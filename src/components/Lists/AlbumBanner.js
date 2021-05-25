@@ -62,7 +62,7 @@ const AlbumBanner = (props) => {
                     {
                         banner.albums.map((album,index)=>{
                             if(index<4)
-                            return <AlbumCard album={album}/>
+                            return <AlbumCard album={album}  mode={props.mode}/>
                         })
                     }        
                 </Grid>

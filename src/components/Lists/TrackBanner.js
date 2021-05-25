@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom'
 
 import Grid from '@material-ui/core/Grid'
 
-const TrackBanner = () => {
+const TrackBanner = (props) => {
     const [banner,bannerSetter] = useState({
         bannerName:"Camila Cabello",
         tracks:[
@@ -56,7 +56,7 @@ const TrackBanner = () => {
                         banner.tracks.map((track,index)=>{
                             {/* return <li key={index}><TrackCard playSong={()=>{showPlayer()}}  track={track} /></li> */}
                             if(index<7)
-                            return <TrackCard track={track} />
+                            return <TrackCard  mode={props.mode} track={track} />
                         })
                     }
                 </Grid>

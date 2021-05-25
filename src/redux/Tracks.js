@@ -1,16 +1,16 @@
 import {createSlice} from '@reduxjs/toolkit'
 
-export const myTracksSlice = createSlice({
-    name:"myTracks",
+export const TracksSlice = createSlice({
+    name:"Tracks",
     initialState:{
         tracks: []
     },
     reducers:{
-        setTrack:(state,action)=>{
+        setTracks:(state,action)=>{
             state.tracks = action.payload
         }
     }
 })
 
-export const {setTrack} = myTracksSlice.actions
+export const {setTracks} = myTracksSlice.actions
 export default myTracksSlice.reducer

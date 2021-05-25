@@ -39,7 +39,7 @@ const SavedTracks = () => {
     return (
         <div className="main">
             <div className="view-hero"></div>
-            <TrackGrid banner={banner}/>
+            <TrackGrid mode={"edit"} banner={banner}/>
         </div>
     )
 }

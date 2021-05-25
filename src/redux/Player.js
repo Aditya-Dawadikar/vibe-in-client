@@ -3,18 +3,19 @@ import {createSlice} from '@reduxjs/toolkit'
 export const playerSlice = createSlice({
     name:"player",
     initialState:{
-        track: null,
-        details:{}
+        _id:"60926f193a9e7d0bb48d98d1",
+        credits:["A","B"],
+        tags:["a","b","c"],
+        trackName:"track_1620209386113.mp3",
+        url:"http://localhost:3030/stream/track_1620209386113.mp3",
+        uploader:"60926eda3a9e7d0bb48d98d0"
     },
     reducers:{
         setTrack:(state,action)=>{
-            state.track = action.payload
-        },
-        setTrackDetails:(state,action)=>{
-            state.details=action.payload
+            state = action.payload
         }
     }
 })
 
-export const {setTrack, setTrackDetails} = playerSlice.actions
+export const {setTrack} = playerSlice.actions
 export default playerSlice.reducer

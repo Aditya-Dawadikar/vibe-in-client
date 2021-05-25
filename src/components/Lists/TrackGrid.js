@@ -8,7 +8,7 @@ const TrackGrid = (props) => {
         <Grid container item xs={12}>
             {
                 props.banner.tracks.map((track,index)=>{
-                    return <TrackCard track={track} />
+                    return <TrackCard mode={props.mode} track={track} />
                 })
                 }        
         </Grid>

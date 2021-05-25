@@ -4,14 +4,6 @@ import logo from '../../assets/logo.svg';
 import {NavLink} from 'react-router-dom'
 
 const Sidebar = (props) => {
-    let forms=["uploadTrack","createAlbum","addToPlayList"]
-    const [modalShow,modalShowSetter]=useState(false);
-    const [form,formSetter] = useState();
-
-    const modalToggle=(form)=>{
-        modalShowSetter(!modalShow)
-        formSetter(form)
-    }
 
     return (
         <div className="sideBar">
